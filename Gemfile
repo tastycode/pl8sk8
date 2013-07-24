@@ -22,6 +22,7 @@ gem 'chronic'
 gem 'twilio-ruby'
 gem 'foreman'
 gem 'unicorn'
+gem 'rails_12factor'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
