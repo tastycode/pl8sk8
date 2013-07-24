@@ -1,0 +1,31 @@
+<h1>Listing plates</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>State</th>
+      <th>Number</th>
+      <th>Phone</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @plates.each do |plate| %>
+      <tr>
+        <td><%= plate.state %></td>
+        <td><%= plate.number %></td>
+        <td><%= plate.phone %></td>
+        <td><%= link_to 'Show', plate %></td>
+        <td><%= link_to 'Edit', edit_plate_path(plate) %></td>
+        <td><%= link_to 'Destroy', plate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Plate', new_plate_path %>

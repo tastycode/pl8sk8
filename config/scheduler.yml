@@ -1,0 +1,4 @@
+Jobs::ScanAllPlates:
+  cron: "*/5 * * * *"
+  description: "This job scans all plates"
+
