@@ -7,7 +7,11 @@ gem 'httparty'
 gem 'nokogiri'
 gem 'resque-scheduler', :require => 'resque_scheduler'
 
-gem 'pg'
+if ENV['RACK_ENV'] == 'production'
+  gem 'pg'
+else
+  gem 'sqlite3'
+end
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
