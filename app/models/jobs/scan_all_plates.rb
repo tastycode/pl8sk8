@@ -8,11 +8,12 @@ module Jobs
         new_tickets = []
         plate.raw_tickets.each do |raw_ticket|
           unless Citation.find_by_number(raw_ticket[:id])
+            raw_ticket[:number] = raw_ticket.delete(:id)
             new_tickets << Citation.create(raw_ticket)
           end
         end
         if new_tickets.any?
-          ap ["texting ", text_number, "summary for", new_tickets]
+          ap ["texting ", plate.phone, "summary for", new_tickets]
           @client.account.sms.messages.create(
             :from => '+14157671505',
             :to => "+#{plate.phone}",
