@@ -13,7 +13,7 @@ class PlatesController < ApplicationController
   # POST /plates
   # POST /plates.json
   def create
-    @plate = Plate.where(number: plate_params[:number], phone: plate_params[:phone], state: plate_params[:staet]).first_or_create
+    @plate = Plate.where(number: plate_params[:number], phone: plate_params[:phone], state: plate_params[:state]).first_or_create
     respond_to do |format|
       if @plate.save
         format.html { redirect_to @plate, notice: 'Plate was successfully created.' }

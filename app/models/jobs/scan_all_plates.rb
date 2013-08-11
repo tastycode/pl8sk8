@@ -7,8 +7,7 @@ module Jobs
       Plate.all.each do |plate|
         new_tickets = []
         plate.raw_tickets.each do |raw_ticket|
-          unless Citation.find_by_number(raw_ticket[:id])
-            raw_ticket[:number] = raw_ticket.delete(:id)
+          unless Citation.find_by_number(raw_ticket[:number])
             new_tickets << Citation.create(raw_ticket)
           end
         end

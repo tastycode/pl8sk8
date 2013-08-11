@@ -17,7 +17,7 @@ class Plate < ActiveRecord::Base
     return [] unless raw_tickets
     raw_tickets.collect do |_, id, date, code, violation, amount|
       {
-        id: id,
+        number: id,
         date: Chronic.parse(date),
         code: code,
         violation: violation,
