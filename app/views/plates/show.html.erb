@@ -1,46 +1,57 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
+    <div class="span12">
+      <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>State:</strong>
-  <%= @plate.state %>
-</p>
+      <dl>
+        <dt>State:</dt>
+        <dd>
+        <%= @plate.state %>
+        </dd>
 
-<p>
-  <strong>Number:</strong>
-  <%= @plate.number %>
-</p>
+        <dt>Number:</dt>
+        <dd>
+        <%= @plate.number %>
+        </dd>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @plate.phone %>
-</p>
+        <dt>Phone:</dt>
+        <dd>
+        <%= @plate.phone %>
+        </dd>
+      </dl>
 
-
-<h3>Current Tickets</h3>
-<% if @plate.raw_tickets.any? %>
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Date</th>
-        <th>Number</th>
-        <th>Code</th>
-        <th>Description</th>
-        <th>Amount</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @plate.raw_tickets.each do |ticket| %>
-        <tr>
-          <td><%= ticket[:date]%></td>
-          <td><%= ticket[:id]%></td>
-          <td><%= ticket[:code]%></td>
-          <td><%= ticket[:description]%></td>
+      <h3>Current Tickets</h3>
+      <% if @plate.raw_tickets.any? %>
+        <table class="table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Number</th>
+            <th>Code</th>
+            <th>Description</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+        <% @plate.raw_tickets.each do |ticket| %>
+          <tr>
+          <td><%= ticket[:date].to_s("%Y-%m-%d %H:%M")%></td>
+          <td><%= ticket[:number]%></td>
+          <td>
+            <a target="_blank" href="http://www.dmv.ca.gov/portal/home/dmvsearch.htm?lang=en&q=<%=ticket[:code]%>&Submit=Search&cx=001779225245372747843:m1bk7pxvsoc&cof=FORID%3A9%3BNB%3A1">
+              <%= ticket[:code]%>
+            </a>
+          </td>
+          <td><%= ticket[:violation]%></td>
           <td><%= ticket[:amount]%></td>
         </tr>
       <% end %>
-    </tbody>
-  </table>
+        </tbody>
+      </table>
+    </div>
+  </div>
 <% else %>
-  <p>You have no tickets man! We'll let you know if you get one though. </p>
+    <p>You have no tickets man! We'll let you know if you get one though. </p>
 <% end %>
 
+</div>

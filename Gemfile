@@ -16,7 +16,7 @@ end
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 gem 'therubyracer'
-gem 'sass-twitter-bootstrap-rails', '~> 1.0'
+gem 'flatstrap-sass'
 gem 'carmen'
 gem 'chronic'
 gem 'twilio-ruby'
