@@ -1,4 +1,5 @@
 class Plate < ActiveRecord::Base
+  has_many :citations
   def raw_tickets
     response = HTTParty.post("https://prodpci.etimspayments.com/pbw/inputAction.doh", 
       :body =>  {

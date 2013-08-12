@@ -8,7 +8,9 @@ module Jobs
         new_tickets = []
         plate.raw_tickets.each do |raw_ticket|
           unless Citation.find_by_number(raw_ticket[:number])
-            new_tickets << Citation.create(raw_ticket)
+            c = Citation.new(raw_ticket)
+            c.plate = plate
+            c.save
           end
         end
         if new_tickets.any?
