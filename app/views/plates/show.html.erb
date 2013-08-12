@@ -48,6 +48,13 @@
       <% end %>
         </tbody>
       </table>
+
+      <form action="<%=Plate::RAW_ENDPOINT%>" method="post" target="_blank">
+        <%- @plate.params_for_raw.each do |key, val| %>
+          <input type="hidden" name="<%= key %>" value="<%= val %>"/>
+        <% end %>
+        <input type="submit" value="Pay Online">
+      </form>
     </div>
   </div>
 <% else %>

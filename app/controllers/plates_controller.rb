@@ -4,6 +4,7 @@ class PlatesController < ApplicationController
   # GET /plates/new
   def new
     @plate = Plate.new
+    @plate.state = "CA"
   end
 
   # GET /plates/1/edit
