@@ -15,7 +15,7 @@ module Jobs
           end
         end
         if new_tickets.any?
-          ap ["texting ", plate.phone, "summary for", new_tickets]
+          puts ["texting ", plate.phone, "summary for", new_tickets].inspect
           @client.account.sms.messages.create(
             :from => '+14157671505',
             :to => "+#{plate.phone}",
