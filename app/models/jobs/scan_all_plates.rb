@@ -11,6 +11,7 @@ module Jobs
             c = Citation.new(raw_ticket)
             c.plate = plate
             c.save
+            new_tickets << c
           end
         end
         if new_tickets.any?
