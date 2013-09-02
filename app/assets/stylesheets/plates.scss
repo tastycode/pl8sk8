@@ -1,0 +1,62 @@
+.plates.new #main {
+  background: transparent image_url('background.svg') no-repeat center 20px;
+}
+
+// form
+.new_plate {
+  button, .field-group {
+    float: left;
+    margin: .75ex 0;
+    overflow: hidden;
+  }
+
+
+  label, .field-group, button {
+    float: left;
+    width: 170px;
+  }
+
+  label {
+    @include media($tablet) {
+      width: 100%;
+      margin: 0;
+    }
+  }
+}
+
+.features {
+  @include span-columns(12);
+
+  margin: 11em 0 3ex;
+  @include media($tablet) { margin-top: 8em; }
+
+  li {
+    padding: 1ex 0;
+    @include span-columns(1 of 3);
+    @include media($mobile) { @include fill-parent; }
+  }
+}
+
+.plate {
+
+  select {
+    color: $orange;
+    width: 9em;
+    margin: 0 auto 0;
+    display: block;
+    font-size: 80%;
+  }
+
+  input {
+    font-size: 200%;
+    padding: .3ex;
+    color: $dark-blue;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'nordic', $monospace;
+  }
+
+  label {
+    margin-top: 2.5em;
+  }
+}
