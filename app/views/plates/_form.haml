@@ -1,0 +1,14 @@
+= form_for @plate do |f|
+  %fieldset.plate
+    .license_plate.field-group
+      .state
+        - us = Carmen::Country.named("United States")
+        = f.select :state, us.subregions.collect {|sr| [sr.name.downcase, sr.code]}
+      .number
+        = f.text_field :number, :placeholder => '1ABC234'
+    = f.label :number, 'enter your plate number here'
+  %fieldset.phone
+    .field-group
+      = f.telephone_field :phone, :placeholder => "415-555-5555"
+    = f.label :phone, 'and receive a text when you get a ticket.'
+  %button{:type => "submit"} sign up for free
