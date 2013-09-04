@@ -46,3 +46,13 @@
 <% end %>
 
 </div>
+
+<% content_for :footer do %>
+<script type='text/javascript'>
+  mixpanel.track("<%= flash[:mp_just_created] ? 'created' : 'viewed' %> plate", {
+    "tickets": <%= @plate.raw_tickets.count %>,
+    "plate number": "<%= @plate.number %>",
+    "plate state": "<%= @plate.state %>"
+  });
+</script>
+<% end %>
