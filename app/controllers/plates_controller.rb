@@ -15,6 +15,7 @@ class PlatesController < ApplicationController
   # POST /plates.json
   def create
     @plate = Plate.where(number: plate_params[:number], phone: plate_params[:phone], state: plate_params[:state]).first_or_create
+    flash[:mp_just_created] = true
     respond_to do |format|
       if @plate.save
         format.html { redirect_to @plate, notice: 'Plate was successfully created.' }
