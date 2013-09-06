@@ -1,0 +1,23 @@
+// Colors
+$dark-blue:   #073A59;
+$light-blue:  #2D9AA6;
+$off-white:   #F2E2DC;
+$orange:      #F23322;
+$red:         #A61B1B;
+$dark-gray:   #444444;
+$light-gray:  #999999;
+$blue-gray:   #829BAB;
+
+// Color defaults
+$background:  $off-white;
+$link:        $light-blue;
+
+// Grayscale
+$white:       #FEFEFE;
+$black:       #333333;
+
+@import "neat-helpers";
+
+// Breakpoints
+$tablet: new-breakpoint(max-width 768px 8);
+$mobile: new-breakpoint(max-width 480px 4);

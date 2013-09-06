@@ -1,0 +1,49 @@
+// title font
+@import url(http://fonts.googleapis.com/css?family=Montserrat:700);
+
+// copy font
+@import url(http://cloud.webtype.com/css/c3c75671-1ad9-4f3d-bfdf-778506a26853.css);
+
+// license plate font
+@font-face {
+    font-family: 'nordic';
+    src: url('ptf-nordic-rnd-lt-webfont.eot');
+    src: url('ptf-nordic-rnd-lt-webfont.eot?#iefix') format('embedded-opentype'),
+         url('ptf-nordic-rnd-lt-webfont.woff') format('woff'),
+         url('ptf-nordic-rnd-lt-webfont.ttf') format('truetype'),
+         url('ptf-nordic-rnd-lt-webfont.svg#ptf_nordic_rnd_ltnormal') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body, input, select, textarea, button {
+  color: #333;
+  font-family: 'Corbel', "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 200%;
+}
+
+h2, h3 {
+  font-size: 125%;
+  font-weight: normal;
+}
+
+a, a:visited, a:link {
+  color: $link;
+  text-decoration: none;
+}
+
+a:hover {
+  color: shade($link, 20%);
+}
+
+a:link {-webkit-tap-highlight-color: #fcd700;}
+
+p {
+  font-size: 90%;
+  line-height: 1.5;
+  margin: 1ex 0;
+}
