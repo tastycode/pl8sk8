@@ -21,12 +21,10 @@ ActiveRecord::Schema.define(version: 20130812054454) do
     t.decimal  "amount"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "plate_id_id"
     t.integer  "plate_id"
   end
 
   add_index "citations", ["plate_id"], name: "index_citations_on_plate_id"
-  add_index "citations", ["plate_id_id"], name: "index_citations_on_plate_id_id"
 
   create_table "plates", force: true do |t|
     t.string   "state"
