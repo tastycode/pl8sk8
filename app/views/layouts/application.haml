@@ -2,13 +2,13 @@
 %html
   %head
     %title Carport
-    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
-    %meta{:content => "park without worry", :name => "description"}
+    %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}
+    %meta{content: "park without worry", name: "description"}
     = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
     = stylesheet_link_tag "//cloud.webtype.com/css/c3c75671-1ad9-4f3d-bfdf-778506a26853.css", media: "all"
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
-  %body{:class => "#{controller_name} #{action_name}"}
+  %body{class: "#{controller_name} #{action_name}"}
     #main
       %header
         %nav.primary
@@ -17,6 +17,7 @@
             %li=link_to 'deactivate', nil
       = yield
       %footer
-        made with ♥ by <a href='http://twitter.com/tasyc0de'>@tastyc0de</a> &amp; <a href='http://twitter.com/stan'>@stan</a>.
+        made with ♥ by <a href='http://twitter.com/tastyc0de'>@tastyc0de</a> &amp; <a href='http://twitter.com/stan'>@stan</a>.
+
     :javascript
       document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')

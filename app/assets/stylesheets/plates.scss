@@ -1,5 +1,6 @@
 .plates.new #main {
-  background: transparent image_url('background.svg') no-repeat center 20px;
+  background: transparent image_url('background.svg') no-repeat;
+  background-position: center 20px;
 }
 
 // form
