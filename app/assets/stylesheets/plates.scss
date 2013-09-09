@@ -61,3 +61,16 @@
     margin-top: 2.5em;
   }
 }
+
+table.plates {
+  thead tr {
+    background-color: $red;
+    color: $white;
+    th { padding: 0.5em 1em }
+  }
+  tbody {
+    td {
+      padding: 0.5em 1em;
+    }
+  }
+}

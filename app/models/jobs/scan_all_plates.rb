@@ -18,7 +18,7 @@ module Jobs
           puts ["texting ", plate.phone, "summary for", new_tickets].inspect
           @client.account.sms.messages.create(
             :from => '+14157671505',
-            :to => "+#{plate.phone}",
+            :to => "+1#{plate.phone}",
             :body => "You have #{new_tickets.size} tickets - #{new_tickets.collect(&:amount).inject(&:+)}"
           )
         end
