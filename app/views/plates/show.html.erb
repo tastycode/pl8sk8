@@ -45,7 +45,13 @@
     </div>
   </div>
 <% else %>
-    <p>No tickets yet :)</p>
+    <h2>Yay! You have no tickets</h2>
+    <p>We'll let you know if something comes up!</p>
+    
+    <p>Note that we can only scan SFMTA tickets. In some areas like Golden Gate Park, tickets come from SFPD instead, and we can't scan those quite yet. We'll keep you posted</p>
 <% end %>
+
+<h3>Could my car be towed?</h3>
+<p>Good question! We are working on tow-alerts. Until then, you can check <a target="_blank" href='http://autoreturn.com/app/results?m=fyv&region=sf-ca&license=<%=@plate.number%>&state=<%=@plate.state%>'>here</a>.</p>
 
 </div>
