@@ -19,7 +19,7 @@ module Jobs
           @client.account.sms.messages.create(
             :from => '+14157671505',
             :to => "+1#{plate.phone}",
-            :body => "You have #{new_tickets.size} tickets - #{new_tickets.collect(&:amount).inject(&:+)}"
+            :body => "You have #{new_tickets.size} tickets - totaling #{new_tickets.collect(&:amount).inject(&:+)} - http://www.carport.io/plates/#{plate.id}"
           )
         end
       end
