@@ -11,6 +11,20 @@ class PlatesController < ApplicationController
   def edit
   end
 
+  def lookup
+    @plate = Plate.new(:number => params[:number], :state => params[:state])
+    respond_to do |format|
+      format.json do 
+        render json: {
+          number: @plate.number,
+          state: @plate.state,
+          tickets: @plate.raw_tickets
+        }
+      end
+      format.html { render action: 'show' }
+    end
+  end
+
   # POST /plates
   # POST /plates.json
   def create

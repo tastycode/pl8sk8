@@ -1,5 +1,9 @@
 Antipark::Application.routes.draw do
-  resources :plates, :only => [:new, :create, :show]
+  resources :plates, :only => [:new, :create, :show] do
+    collection do
+      get 'lookup'
+    end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
