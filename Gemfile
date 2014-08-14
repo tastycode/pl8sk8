@@ -7,11 +7,7 @@ gem 'httparty'
 gem 'nokogiri'
 gem 'resque-scheduler', :require => 'resque_scheduler'
 
-if ENV['RACK_ENV'] == 'production'
-  gem 'pg'
-else
-  gem 'sqlite3'
-end
+gem 'pg'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -22,7 +18,6 @@ gem 'chronic'
 gem 'twilio-ruby'
 gem 'foreman'
 gem 'unicorn'
-gem 'rails_12factor'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
